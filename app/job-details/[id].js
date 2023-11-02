@@ -83,7 +83,7 @@ const JobDetails = () => {
                     {isLoading ? (
                         <ActivityIndicator size="large" color={COLORS.primary} />
                     ) : error ? (
-                        <Text>Something wnt wrong</Text>
+                        <Text>Something went wrong</Text>
                     ) : data.length === 0 ? (
                         <Text>No data</Text>
                     ) : (
@@ -105,6 +105,8 @@ const JobDetails = () => {
                         </View>
                     )}
                 </ScrollView>
+
+                <JobFooter url={data[0]?.job_google_link ?? 'https://careers.google.com/jobs/results'} />
             </>
         </SafeAreaView>
     )
